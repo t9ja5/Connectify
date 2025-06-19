@@ -1,0 +1,641 @@
+/* modal css
+ */
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #fefefe81;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: #020202;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#post_img {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    display: block;
+}
+
+
+/* sidebar css */
+
+body {
+    background: url(images/bg5.jpg);
+        background-size: cover;
+        background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+.sidebar {
+position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    background-color: rgb(0 0 0 / 47%);
+    -webkit-backdrop-filter: blur(17px);
+    backdrop-filter: blur(5px);
+    border-right: 1px solid rgba(255, 255, 255, 0.192);
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: white;
+}
+
+.area {
+    flex: 1;
+    margin-left: 200px;
+    /* Space for fixed sidebar */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.content{
+    padding: 20px;
+}
+
+.logo img {
+    margin-top: 20px;
+    height: 50px;
+    width: 170px;
+    padding: 5px 10px;
+    filter: invert();
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.sidebar .links {
+    list-style-type: none;
+    margin-top: 20px;
+    width: 75%;
+    padding: 20px;
+}
+
+.links li {
+    display: flex;
+    align-items: center;
+}
+
+.links li a {
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.links li:hover {
+    background: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #000000;
+    a{
+        color: #000000;
+    }
+}
+
+.links li span {
+    padding: 12px 10px;
+}
+
+.links hr {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.a1 {
+    display: flex;
+        /* border: 1px solid #ffffff70; */
+        align-items: center;
+        background-color: #04040491;
+        padding: 20px;
+        color: white;
+        backdrop-filter: blur(5px);
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.user-img {
+    flex: 1 1 280px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.user-img img {
+    object-fit: cover;
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+}
+
+.user-info {
+    flex: 2 1 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.numbers {
+
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.num {
+    text-align: center;
+}
+
+.bio {
+    font-size: 18px;
+    box-shadow: black;
+}
+
+.edit {
+    border-radius: 4px;
+    color: white;
+    background-color: black;
+    height: 40px;
+    width: 140px;
+    align-self: center;
+    margin-top: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+
+
+    .follow_button {
+        height: 50px;
+        width: 100px;
+        border: none;
+        border-radius: 30px;
+        color: black;
+        font-weight: 600;
+        font-size: 18px;
+
+    }
+    .follow_button:hover {
+        background-color: rgba(0, 0, 0, 0.24);
+        color:white;
+    }
+    .chat-button {
+        height: 50px;
+        width: 100px;
+        border: none;
+        border-radius: 30px;
+        color: black;
+        font-weight: 600;
+        font-size: 18px;
+        a{
+            text-decoration:none; 
+            color:black; 
+            font-size:18px;
+        }
+
+    }
+    .chat-button:hover {
+        background-color: rgba(0, 0, 0, 0.24);
+        color:white;
+        a{
+            text-decoration:none; 
+            color:white; 
+            font-size:18px;
+        }
+    }
+
+
+
+}
+
+hr {
+    border: 1px solid rgba(255, 255, 255, 0.301);
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    gap: 10px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid black;
+    }
+
+    .links li {
+        justify-content: center;
+    }
+
+    .area {
+        padding: 10px;
+    }
+
+    .user-img {
+        padding-right: 0;
+        justify-content: center;
+        padding-bottom: 20px;
+    }
+
+    .user-info {
+        align-items: center;
+        text-align: center;
+    }
+
+    .numbers {
+        flex-direction: column;
+    }
+
+    .numbers .num {
+        width: 100%;
+    }
+
+}
+
+
+
+
+/* Posts Section Styles */
+
+
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.post {
+       background-color: #00000066; 
+        border-radius: 10px;
+        /* backdrop-filter: blur(5px); */
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+}
+
+.post img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.post .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.post .profile img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.post .profile .name {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.post p {
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.post small {
+    margin-bottom: 10px;
+        color: #ffffff;
+}
+
+.post .actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: center;
+    .like-icon {
+            color: red;
+        }
+        gap: 6px;
+}
+
+.post .actions span {
+    cursor: pointer;
+}
+
+.profile {
+    img {
+        object-fit: cover;
+    }
+}
+
+/* comment css*/
+.comment {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 20px;
+    background-color: #090909db;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comments-list {
+    height: 320px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.comment img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comment-content {
+    max-width: 80%;
+}
+
+.comments-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.comments-modal .modal-content {
+    background-color: #f2f1f1e0;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 20px;
+}
+
+.add-comment textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-comment button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+.add-comment button:hover {
+    background-color: #0202023f;
+    color: black;
+}
+
+/*reel-comment */
+.reel-comment {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 20px;
+    background-color: #090909db;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.reel-comment img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.reel-comment-content {
+    max-width: 80%;
+}
+
+.reel-comments-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.reel-comments-modal .reel-modal-content {
+    background-color: #f2f1f1e0;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    border-radius: 20px;
+}
+
+.reel-comments-list {
+    height: 320px;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.reel-add-comment textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.reel-add-comment button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+.reel-add-comment button:hover {
+    background-color: #0202023f;
+    color: black;
+}
+/* reel section css */
+  .reel {
+        background-color: #00000066;
+        border-radius: 10px;
+        color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+  }
+
+  .reel_details {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .reel_actions {
+      justify-content: end;
+      display: flex;
+      gap: 5px;
+      .reel-like-icon{
+        color: red;
+      }
+  }
+.reels,
+.posts {
+    display: none;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.posts.active,
+.reels.active {
+    display: grid;
+}
+
+.post,
+.reel {
+    position: relative;
+    overflow: hidden;
+}
+
+.tab {
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+.tab.active {
+    font-weight: bold;
+}
+
+.reel video {
+    width: 100%;
+    height: 200px;
+}
+.reel_video{
+    display: contents;
+}
+.reel-content {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.reel-content p {
+    margin: 5px 0 0;
+}

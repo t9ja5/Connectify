@@ -1,0 +1,568 @@
+/* General reset */
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    background: url(images/reel_bg2.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.navbar {
+    padding: 0;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex: 2;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.199);
+}
+
+.navbar .logoimg img {
+    padding-left: 80px;
+    filter: invert();
+}
+
+.navbar .profilePic {
+    margin-right: 50px;
+}
+
+.navbar img {
+    object-fit: cover;
+    border-radius: 40%;
+}
+
+.searchBar {
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    border-radius: 30px;
+    height: 35px;
+    text-align: left;
+    border: none;
+    align-items: center;
+    display: flex;
+}
+
+.searchBar input {
+    border: none;
+    width: 500px;
+    margin: 0;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 30px;
+    outline: 0;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    background-color: rgba(255, 255, 255, 0);
+    color: white;
+    backdrop-filter: blur(3px);
+    border-right: 1px solid rgba(255, 255, 255, 0.178);
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.area {
+    flex: 1;
+    margin-left: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.sidebar .links {
+    margin-top: 20px;
+    width: 75%;
+    padding: 20px;
+    height: 71%;
+}
+
+.links li {
+    display: flex;
+    align-items: center;
+}
+
+.links li a {
+    color: white;
+    padding: 10px;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.links li:hover {
+    background: #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+}
+
+.links li:hover a {
+    color: black;
+}
+
+.links li span {
+    padding: 12px 10px;
+}
+
+.links hr {
+    border: 1px solid white;
+}
+
+/* Modal CSS */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #fefefe81;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    animation: slideDown 0.3s;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.close {
+    color: #020202;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin: 10px 0;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#post_img {
+    max-width: 100%;
+    max-height: 200px;
+    margin-top: 10px;
+    display: block;
+}
+
+/* Post CSS */
+.postbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    color: whitesmoke;
+}
+
+.container {
+    background-color: #0000007c;
+    padding: 20px;
+   /* -webkit-backdrop-filter: blur(10px); */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 20px 0;
+
+    h5 {
+        margin-top: 5px;
+
+        img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+        }
+    }
+
+    h1 {
+        text-align: center;
+    }
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.card-body {
+    padding-top: 5px;
+    padding: 15px;
+}
+
+.card-title {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.card-title img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.card-text {
+    margin-bottom: 5px;
+    color: #ffffffe0;
+    font-size: 18px;
+}
+
+.text-muted {
+    color: #ffffffa6 !important;
+}
+
+hr {
+    background-color: #eaeaea;
+    margin: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 10px;
+}
+
+.actions .like-icon {
+    color: red;
+}
+
+.actions .comment-icon {
+    color: white;
+}
+
+.actions a {
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Search Bar CSS */
+#userList {
+    position: fixed;
+    left: 472px;
+    border-radius: 0 0 20px 20px;
+    border: none;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #030303;
+    z-index: 2;
+}
+
+#userList .content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+    background-color: rgba(3, 3, 3, 0.368);
+    width: 33vw;
+}
+
+#userList .content:last-child {
+    border-bottom: none;
+}
+
+#userList .content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+#userList .details {
+    flex: 1;
+    color: white;
+}
+
+#userList .details span {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+#userList .content:hover {
+    background-color: #ffffff7e;
+    color: black;
+}
+
+#userList .content:hover span {
+    color: black;
+}
+
+#userList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Comment CSS */
+.comment {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 20px;
+    background-color: #09090932;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comments-list {
+    height: 320px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.comment img {
+    object-fit: cover;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.comment-content {
+    max-width: 80%;
+}
+
+.comments-modal {
+    display: none;
+    position: fixed;
+    /* Ensures it covers the entire viewport */
+    z-index: 4;
+    /* Ensures it is above other elements */
+    left: 0;
+    top: 0;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    /* Cover the entire width */
+    height: 100%;
+    /* Cover the entire height */
+    overflow: auto;
+    /* Allow scrolling if content is too large */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Semi-transparent background */
+}
+
+.comments-modal .modal-content {
+    background-color: #fefefe71;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Ensures content does not overflow */
+}
+
+/* Prevent body scrolling when modal is open */
+
+
+.add-comment textarea {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.add-comment button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+.add-comment button:hover {
+    background-color: #0202023f;
+    color: black;
+}
+
+/* Share Modal CSS */
+.share-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.share-list {
+    overflow: scroll;
+
+
+}
+
+.share-list::-webkit-scrollbar {
+    width: 0;
+}
+
+.share-list .receiver {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    padding-right: 15px;
+    border-bottom-color: #f1f1f1;
+}
+
+.share-list .receiver:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.share-list .content {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+    border-radius: 20px;
+    background-color: rgba(3, 3, 3, 0.368);
+}
+
+.share-list .receiver img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.share-list .receiver .details span {
+    font-size: 25px;
+}
+.share-buttons img {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+.share-buttons #Whatsapp img{
+    border: 1px solid black; 
+    border-radius: 10px;
+
+}
+.share-modal .common{
+    margin-top:180px ;
+    border: 1px solid #888;
+    width: 45%;
+    border-radius: 20px;
+    background-color: #fefefe;
+    padding: 20px;
+}
+.common button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+.common button:hover {
+    background-color: #0202023f;
+    color: black;
+}
+

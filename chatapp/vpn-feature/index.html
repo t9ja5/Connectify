@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VPN Feature</title>
+<style>
+    
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('background.jpg') center/cover no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        color: #fff; /* Text color for better visibility */
+        position: relative; /* Add position relative to the body for absolute positioning of the logo */
+    }
+    .content {
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background for content */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        max-width: 90%;
+        text-align: left;
+        animation: fadeIn 0.5s ease-out;
+    }
+    .install-link {
+        background-color: #1a1a1a; /* Neon color background */
+        padding: 15px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-bottom: 20px;
+        box-shadow: 0 0 20px #00faff; /* Blue neon glow */
+    }
+    .install-link a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 20px;
+    }
+    .install-link span {
+        color: #00faff; /* Blue neon color */
+        font-weight: bold;
+        font-size: 20px;
+        margin-right: 10px;
+    }
+    .steps {
+        margin-top: 20px; /* Adjusted margin */
+    }
+    .steps h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    .steps p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .steps img {
+        width: 16px; /* extension chi size minimize keli */
+        vertical-align: middle;
+        margin-left: 5px;
+        /* Add white shadow */
+        filter: drop-shadow(0 2px 2px rgba(255, 255, 255, 0.7));
+    }
+    .logo {
+        position: fixed; /* logo chi position fix ahe */
+        top: 20px; 
+        left: 20px;
+    }
+    .logo img {
+        width: 120px; 
+        filter: drop-shadow(0 0 10px #B6FFFA); 
+    }
+    @keyframes fadeIn {
+        0% { opacity: 0; transform: translateY(-20px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Adjustments */
+    @media only screen and (max-width: 600px) {
+        .content {
+            padding: 10px;
+        }
+        .steps h3 {
+            font-size: 20px;
+        }
+        .steps p {
+            font-size: 16px;
+        }
+        .steps img {
+            width: 14px;
+        }
+    }
+
+</style>
+</head>
+<body>
+<div class="logo">
+    <img src="./logo2.png" alt="Logo" class="logo-img">
+</div>
+<div class="content">
+    <h1>Install and Use VPN Extension</h1>
+    <div class="install-link" id="installLinkContainer">
+        <!-- Placeholder for dynamic link insertion -->
+    </div>
+    <!-- Instructions to Use DotVPN -->
+    <div class="steps">
+        <h3>Instructions to Use DotVPN</h3>
+        <p>Step 1: Click on the DotVPN extension <img src="https://cdn-icons-png.flaticon.com/512/565/565505.png" alt="Extension Icon"></p>
+        <p>Step 2: Click on DotVPN and then select "New to DotVPN"</p>
+        <p>Step 3: Choose a free country and right-click to connect</p>
+        <p>Step 4: To disconnect, repeat the same step and click on "Disconnect"</p>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var installLinkContainer = document.getElementById('installLinkContainer');
+    var extensionLinks = {
+        chrome: 'https://chrome.google.com/webstore/detail/dotvpn-fast-private-vpn/kpiecbcckbofpmkkkdibbllpinceiihk?hl=en',
+        firefox: 'https://addons.mozilla.org/firefox/addon/dotvpn/',
+        brave: 'https://chrome.google.com/webstore/detail/dotvpn-fast-private-vpn/kpiecbcckbofpmkkkdibbllpinceiihk?hl=en',
+        opera: 'https://addons.opera.com/extensions/details/dotvpn/',
+        ie: 'https://microsoftedge.microsoft.com/addons/detail/safum-vpn-free-vpn/ncpkioolbefiinmbflfglojjabaipegg?hl=en-US'
+    };
+
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.includes('firefox')) {
+        installLinkContainer.innerHTML = '<span>Click Here:</span> <a href="' + extensionLinks.firefox + '" target="_blank">Install DotVPN Extension for Firefox</a>';
+    } else if (userAgent.includes('chrome')) {
+        installLinkContainer.innerHTML = '<span>Click Here:</span> <a href="' + extensionLinks.chrome + '" target="_blank">Install DotVPN Extension for Chrome</a>';
+    } else if (userAgent.includes('opera')) {
+        installLinkContainer.innerHTML = '<span>Click Here:</span> <a href="' + extensionLinks.opera + '" target="_blank">Install DotVPN Extension for Opera</a>';
+    } else if (userAgent.includes('brave')) {
+        installLinkContainer.innerHTML = '<span>Click Here:</span> <a href="' + extensionLinks.brave + '" target="_blank">Install DotVPN Extension for Brave</a>';
+    }
+    else if (userAgent.includes('trident') || userAgent.includes('msie')) { // Check for IE using Trident or MSIE in user agent
+        installLinkContainer.innerHTML = '<span>Click Here:</span> <a href="' + extensionLinks.ie + '" target="_blank">Install SafumVPN Extension for Internet Explorer</a>';
+    }
+});
+</script>
+
+</body>
+</html>
